@@ -3,7 +3,9 @@ package com.example.todolist.application.service;
 import com.example.todolist.domain.model.Task;
 import com.example.todolist.domain.port.in.CreateTaskUseCase;
 import com.example.todolist.domain.port.out.TaskRepositoryPort;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateTaskService implements CreateTaskUseCase {
 
     private final TaskRepositoryPort taskRespository;

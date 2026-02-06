@@ -4,10 +4,12 @@ import com.example.todolist.domain.model.Task;
 import com.example.todolist.domain.port.out.TaskRepositoryPort;
 import com.example.todolist.infrastructure.entity.TaskEntity;
 import com.example.todolist.infrastructure.mapper.TaskMapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class TaskRepositoryAdapter implements TaskRepositoryPort {
 
     private final TaskRepository taskRepository;
@@ -26,16 +28,17 @@ public class TaskRepositoryAdapter implements TaskRepositoryPort {
 
     @Override
     public Optional<Task> findById(Long id) {
-        return Optional.empty();
+        return taskRepository.findById(id)
+                .map(TaskMapper::toDomain);
     }
 
     @Override
     public List<Task> findAll() {
-        return List.of();
+        return taskRepository.findAll().stream().map(TaskMapper::toDomain).toList();
     }
 
     @Override
     public void deleteById(Long id) {
-
+        taskRepository.deleteById(id);
     }
 }

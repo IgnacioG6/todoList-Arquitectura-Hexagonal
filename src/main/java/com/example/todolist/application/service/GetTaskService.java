@@ -5,9 +5,11 @@ import com.example.todolist.domain.model.EstadoTarea;
 import com.example.todolist.domain.model.Task;
 import com.example.todolist.domain.port.in.GetTaskUseCase;
 import com.example.todolist.domain.port.out.TaskRepositoryPort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class GetTaskService implements GetTaskUseCase {
 
 

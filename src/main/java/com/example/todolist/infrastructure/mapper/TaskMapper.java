@@ -13,8 +13,8 @@ public class TaskMapper {
                 task.getTitle(),
                 task.getDescription(),
                 task.getStatus(),
-                task.getDateCompleted(),
-                task.getDateCreation()
+                task.getDateCreation(),
+                task.getDateCompleted()
         );
     }
 
@@ -26,8 +26,8 @@ public class TaskMapper {
                 taskEntity.getTitle(),
                 taskEntity.getDescription(),
                 taskEntity.getStatus(),
-                taskEntity.getDateCompleted(),
-                taskEntity.getDateCreation()
+                taskEntity.getDateCreation(),
+                taskEntity.getDateCompleted()
         );
     }
 }

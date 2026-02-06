@@ -4,9 +4,9 @@ import com.example.todolist.domain.exception.TaskNotFoundException;
 import com.example.todolist.domain.model.Task;
 import com.example.todolist.domain.port.in.CompleteTaskUseCase;
 import com.example.todolist.domain.port.out.TaskRepositoryPort;
+import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
+@Service
 public class CompleteTaskService implements CompleteTaskUseCase {
 
     private final TaskRepositoryPort taskRepository;
